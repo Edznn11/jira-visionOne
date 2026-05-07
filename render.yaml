@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: visionone-jira-webhook
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: JIRA_BASE_URL
+        sync: false         # preencher no painel do Render
+      - key: JIRA_USER_EMAIL
+        sync: false
+      - key: JIRA_API_TOKEN
+        sync: false
+      - key: JIRA_PROJECT_KEY
+        value: TJE
+      - key: JIRA_ISSUE_TYPE_ID
+        value: "10069"
+      - key: VISIONONE_WEBHOOK_SECRET
+        sync: false
+      - key: VISIONONE_API_BASE
+        value: https://api.xdr.trendmicro.com
+      - key: VISIONONE_TOKEN
+        sync: false
