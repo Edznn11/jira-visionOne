@@ -7,18 +7,24 @@ services:
     healthCheckPath: /health
     envVars:
       - key: JIRA_BASE_URL
-        sync: false         # preencher no painel do Render
+        sync: false
       - key: JIRA_USER_EMAIL
         sync: false
       - key: JIRA_API_TOKEN
         sync: false
       - key: JIRA_PROJECT_KEY
-        value: TJE
+        sync: false
       - key: JIRA_ISSUE_TYPE_ID
-        value: "10069"
+        sync: false
       - key: VISIONONE_WEBHOOK_SECRET
         sync: false
       - key: VISIONONE_API_BASE
         value: https://api.xdr.trendmicro.com
       - key: VISIONONE_TOKEN
+        sync: false
+      - key: JIRA_FIELD_CREATED_AT
+        sync: false
+      - key: JIRA_FIELD_HOST_NAME
+        sync: false
+      - key: JIRA_FIELD_ALERT_ID
         sync: false
